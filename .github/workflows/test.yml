@@ -1,0 +1,12 @@
+name: Test github action
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  task1:
+    runs-on: ubuntu:latest
+    steps:
+      - name: Printing hello word
+        run: echo "Hello world"
