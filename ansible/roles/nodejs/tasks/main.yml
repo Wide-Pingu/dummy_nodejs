@@ -13,5 +13,9 @@
     ci: true
     path: "/home/{{ user_folder }}/nodejs/src"
 
+- name: Stop Node.js app if running (exact match)
+  ansible.builtin.shell: >
+    pkill -f -x "node /home/{{ user_folder }}/nodejs/src/server.js" || true
+
 - name: Start Node.js app
   ansible.builtin.shell: "nohup node /home/{{ user_folder }}/nodejs/src/server.js > /var/log/nodeapp.log 2>&1 &"
