@@ -33,5 +33,5 @@ jobs:
 
       - name: Push changes using ansible
         run: |
-          ansible-playbook playbook.yml -t nodejs
-        working-directory: ./ansible
+          ansible-playbook -i inventory.yml playbook.yml -t nodejs
+        working-directory: ansible
