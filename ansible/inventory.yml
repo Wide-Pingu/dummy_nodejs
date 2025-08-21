@@ -1,0 +1,8 @@
+all:
+  children:
+    remote:
+      hosts:
+        www1:
+          ansible_host: 138.68.132.162
+          ansible_user: root
+          user_folder: antoine

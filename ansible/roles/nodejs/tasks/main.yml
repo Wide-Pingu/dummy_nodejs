@@ -1,0 +1,17 @@
+- name: Install nodejs and npm
+  apt:
+    name: nodejs,npm
+    state: present
+
+- name: Copy files from git repo
+  git:
+    repo: "{{ git_http_url }}"
+    dest: "/home/{{ user_folder }}/nodejs"
+
+- name: Npm install the dependencies
+  npm:
+    ci: true
+    path: "/home/{{ user_folder }}/nodejs/src"
+
+- name: Start Node.js app
+  ansible.builtin.shell: "nohup node /home/{{ user_folder }}/nodejs/src/server.js > /var/log/nodeapp.log 2>&1 &"
