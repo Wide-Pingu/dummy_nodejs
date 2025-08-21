@@ -13,7 +13,7 @@ jobs:
   push_changes:
     runs-on: ubuntu-latest
     steps: 
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v4
 
 
       - name: Start SSH agent and add key
